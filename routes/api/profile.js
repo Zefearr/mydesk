@@ -7,7 +7,7 @@ const keys = require('../../config/keys');
 //load validation
 const validateProfileInput = require('../../validation/profile');
 const validateExperienceInput = require('../../validation/experience'); 
-const validateEducationInput = require('../../validation/education');  
+
 
 //profile model user model
 const Profile = require('../../models/Profile');
@@ -61,13 +61,13 @@ router.get('/all', (req, res) => {
 
 })
 
-//@router   POST api/profile/handle/:handle
+//@router   GET api/profile/handle/:handle
 //@description Get profile by handle
 //@access   public
-router.get('/handle/:handle', (req, res) => {
+router.get('/slug/:slug', (req, res) => {  
     const errors = {};
     Profile.findOne({
-            handle: req.params.handle
+            slug: req.params.slug 
         })
         .populate('user', ['name', 'avatar'])
         .then((profile) => {
@@ -119,26 +119,18 @@ router.post('/', passport.authenticate('jwt', {
     //Get fields
     const profileFieds = {};
     profileFieds.user = req.user.id;
-    if (req.body.handle) {
-        profileFieds.handle = req.body.handle;
+    if (req.body.slug) { 
+        profileFieds.slug = req.body.slug;
     }
-    if (req.body.company) {
-        profileFieds.company = req.body.company;
-    }
-    if (req.body.website) {
-        profileFieds.hanwebsitedle = req.body.website;
-    }
-    if (req.body.location) {
-        profileFieds.location = req.body.location;
-    }
+   
     if (req.body.bio) {
         profileFieds.bio = req.body.bio;
     }
+    if (req.body.ava) {
+        profileFieds.ava = req.body.ava; 
+    }
     if (req.body.status) {
         profileFieds.status = req.body.status;
-    }
-    if (req.body.github) {
-        profileFieds.github = req.body.github;
     }
     //skills split into array
     if (typeof req.body.skills !== 'undefined') {
@@ -149,15 +141,11 @@ router.post('/', passport.authenticate('jwt', {
     if (req.body.youtube) {
         profileFieds.social.youtube = req.body.youtube;
     }
-    if (req.body.twitter) {
-        profileFieds.social.twitter = req.body.twitter;
-    }
+  
     if (req.body.facebook) {
         profileFieds.social.facebook = req.body.facebook;
     }
-    if (req.body.instagram) {
-        profileFieds.social.instagram = req.body.instagram;
-    }
+  
     Profile.findOne({
             user: req.user.id
         })
@@ -173,12 +161,12 @@ router.post('/', passport.authenticate('jwt', {
                 }).then(profile => res.json(profile))
             } else {
                 //create
-                //check if handle exists
+                //check if handle exists 
                 Profile.findOne({
-                    handle: profileFieds.handle
+                    slug: profileFieds.slug
                 }).then(profile => {
                     if (profile) {
-                        errors.handle = 'That handle already exists';
+                        errors.slug = 'That handle already exists';
                         res.status(400).json(errors);
                     }
                     // Save profile
@@ -204,7 +192,7 @@ router.post('/experience', passport.authenticate('jwt', { session: false }), (re
         const newExp = {
             title: req.body.title,
             company: req.body.company,
-            location: req.body.location,
+            location: req.body.location, 
             from: req.body.from,
             to: req.body.to, 
             current: req.body.current,
@@ -216,33 +204,7 @@ router.post('/experience', passport.authenticate('jwt', { session: false }), (re
     })
 });
 
-//@router   POST api/profile/education
-//@description Add education to profile
-//@access   private
 
-router.post('/education', passport.authenticate('jwt', { session: false }), (req, res) => {
-    const { errors, isValid } = validateEducationInput(req.body);
-    //checkvalidation 
-    if (!isValid) {
-        // return any errors 400
-        return res.status(400).json(errors); 
-    }
-    Profile.findOne({ user: req.user.id })
-    .then(profile => {
-        const newEdu = {
-            school: req.body.school,
-            degree: req.body.degree,
-            fieldofstudy: req.body.fieldofstudy,
-            from: req.body.from,
-            to: req.body.to, 
-            current: req.body.current,
-            description: req.body.description
-        }
-        //add to exp array
-        profile.education.unshift(newEdu); 
-        profile.save().then(profile => res.json(profile)); 
-    })
-});
 
 //@router   DELETE api/profile/experience/:exp_id
 //@description dejete experience from profile
@@ -261,30 +223,10 @@ router.delete('/experience/:exp_id', passport.authenticate('jwt', { session: fal
         profile.experience.splice(removeIndex, 1);
 
         //save
-        profile.save().then(profile => res.json(profile))
+        profile.save().then(profile => res.json(profile)) 
     }).catch(err => res.status(404).json(err)) 
 });
 
-//@router   DELETE api/profile/education/:edu_id
-//@description dejete education from profile
-//@access   private
-
-router.delete('/education/:edu_id', passport.authenticate('jwt', { session: false }), (req, res) => { 
-  
-    Profile.findOne({ user: req.user.id })
-    .then(profile => {
-        //get remove index
-
-        const removeIndex = profile.education
-            .map(item => item.id)
-            .indexOf(req.params.edu_id);
-        //Splice out of array
-        profile.education.splice(removeIndex, 1); 
-
-        //save
-        profile.save().then(profile => res.json(profile))
-    }).catch(err => res.status(404).json(err)) 
-});
 
 //@router   DELETE api/profile
 //@description dejete user and profile

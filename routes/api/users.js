@@ -21,15 +21,12 @@ router.get('/test', (req, res) => {
     })
 });
 
-//@router   GET api/users/register
+//@router   POST api/users/register 
 //@description   register user
 //@access   Public 
 router.post('/register', (req, res) => {
 
-    const {
-        errors,
-        isValid
-    } = validateRegisterInput(req.body);
+    const { errors, isValid } = validateRegisterInput(req.body);
 
     //check validation
     if (!isValid) {
@@ -107,7 +104,7 @@ router.post('/login', (req, res) => {
 
                     //sign token
                     jwt.sign(payload, keys.Key, {
-                        expiresIn: 3600
+                        expiresIn: 18000 
                     }, (err, token) => {
                         res.json({
                             success: true,

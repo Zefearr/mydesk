@@ -1,0 +1,116 @@
+.like-post {
+    float:left;
+    margin-right:10px;
+}
+.like-post.liked {
+    background-color:#fff;
+}
+.likes-container {
+    max-width:300px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.post-item img {
+    max-width:100%;
+}
+.post-item {
+    max-width:100%;
+    margin: 0 auto;
+    display:block;
+    margin-bottom:20px;
+    margin-top:20px;
+    background-color:#fff;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:0 2px 2px #444;
+    
+
+}
+
+
+   .post-item__author {
+       display:flex;
+   } 
+
+.post-item__author::after {
+    content:'';
+    display:block;
+    clear: both;
+}
+.post-item__author {
+    width:100%;
+    height:auto;
+    position: relative;
+    padding: 20px 20px;
+    padding-bottom:0;  
+}
+.post-item__author p {
+    margin:0;
+    padding:0;
+    font-size:16px;
+    overflow: hidden; 
+}
+.post-item__avatar {
+    border-radius: 50%;
+    width:40px;
+    height:40px;
+    float:left;
+    margin-right:10px;
+}
+.post-item__time {
+   
+    overflow: hidden;
+    padding-left:40px;
+    vertical-align:10px;
+    color:gray;
+}
+.post-item__author-name {
+    padding:0;
+    margin:0;
+}
+.post-item__main-content::after {
+    content:'';
+    display:block;
+    clear:both;
+}
+.post-item__main-content {
+    padding:20px;
+    font-size:18px;
+    font-weight:300;
+    border-bottom:1px solid black;
+}
+.post-item__main-content p {
+    margin: 10px 0;
+  
+    font-size: 18px;
+}
+.post-item__main-content p:first-child {
+    margin-top:0px;
+}
+.delete-post-icon {
+    position: absolute;
+    right:10px;
+    top:10px;
+    cursor: pointer;
+    z-index: 1;
+}
+.delete-post-icon:hover {
+    opacity:.5;
+}
+.post-item-comment__text-field {
+    max-width:80%;
+}
+
+.likes-container::after {
+    content:'';
+    display:block;
+    clear: both;
+}
+.likes-container {
+    display:flex;
+    width:100%;
+}
+.likes-container > div {
+    margin-right: 10px;
+}

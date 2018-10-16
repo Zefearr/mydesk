@@ -1,0 +1,16 @@
+.particles-container {
+    width:100%;
+    height:600px; 
+    overflow: visible;
+    position: relative;
+}
+.particles-container div {
+    position: relative;
+    left:0;
+    top:0;
+    width:100%;
+    height: 100%;
+}
+.particles-container canvas {
+    overflow: visible;
+}

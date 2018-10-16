@@ -1,0 +1,11 @@
+.exp-table {
+    background-color:#fff;
+    margin-bottom:10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.exp-table th, .exp-table td {
+   
+    font-size:18px;
+    padding:7px;
+}

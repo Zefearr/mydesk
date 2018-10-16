@@ -7,23 +7,17 @@ const ProfileShema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users' 
     },
-    handle: {
+    slug: {  
         type: String,
         required: true,
         max: 40
     },
-    company: {
-        type: String
-    },
-    website: {
-        type: String
-    },
-    location: {
-        type: String
-    },
+    ava: { 
+        type: String 
+    }, 
     status: {
         type: String,
-        required: true
+        required: true 
     },
     skills: {
         type: [String],
@@ -32,9 +26,7 @@ const ProfileShema = new Schema({
     bio: {
         type: String 
     },
-    github: {
-        type: String
-    },
+
     experience: [{
         title: {
             type: String,
@@ -63,48 +55,13 @@ const ProfileShema = new Schema({
         },
 
     }],
-    education: [{
-        school: {
-            type: String,
-            required: true
-        },
-        degree: {
-            type: String,
-            required: true
-        },
-        fieldofstudy: {
-            type: String,
-            required: true
-        },
-        from: {
-            type: Date,
-            required: true
-        },
-        to: {
-            type: Date
-        },
-        current: {
-            type:Boolean,
-            default: false
-        },
-        description: { 
-            type: String,
-        },
-
-    }],
     social: {
         youtube: {
             type: String
         },
-        twitter: {
-            type: String
-        },
         facebook: {
             type: String
-        },
-        instagram: {
-            type: String
-        },
+        }
     },
     date: {
         type: Date,

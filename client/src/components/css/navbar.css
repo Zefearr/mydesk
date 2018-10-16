@@ -1,0 +1,138 @@
+.page-header {
+    max-width:1270px;
+    margin: 0 auto;
+    margin-top:50px;
+    height:60px;
+    position: relative;
+    background-color:#444;
+    border-radius:3px;
+    overflow: visible;
+    display:block;
+   border-bottom-right-radius: 0;
+    display:flex;
+   /* background: url('../../img/navbar_last.svg');   */
+   /* background-repeat: no-repeat; */
+ 
+   
+   z-index: 2;  
+}
+.brand {
+    color:#fff;
+    text-decoration: none;
+    font-weight: 600;
+    float:left;
+    display: block;
+    padding:16px 24px;   
+}
+.nav-flex {
+    display:flex;
+    justify-content: space-between;
+    height:40px;
+    
+    margin: auto;
+}
+.main-navigation {
+    margin:0;
+    list-style: none;
+    padding:0;
+    width:100%;
+    height:100%;
+    
+}
+.main-navigation li::before{
+     content:'';
+    display:block;
+    width:100%;
+    transform:scaleX(.6) scaleY(.6);
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+   
+   background-color:#fff;
+    opacity:0;
+    
+}
+.main-navigation li a::before {
+    content:'';
+    display:block;
+    width:1px;
+    height:100%;
+    position: absolute;
+    left:0px;
+    top:0;
+    background-color:#222;
+    transition:.3s all ease;
+}
+.main-navigation li a {
+    text-decoration: none;
+    display: block;
+    margin:auto;
+    position: relative;
+    font-size:20px;
+    background-color:transparent;
+    height:100%;
+    text-align:center;
+    color:lightgray;
+    padding:8px 24px;
+    min-width:120px;
+    font-weight: 400;
+    border-left:1px solid #777;
+}
+.main-navigation li:hover::before { 
+    opacity:0;
+     transition:.3s all ease;
+       
+    
+}
+
+.submenu {
+    list-style: none;
+    position: absolute;
+    bottom:0;
+    transform:translateY(100%);
+    background-color:#444;
+    border-top:none;
+    margin:0;
+    padding:0;
+    width:100%;
+    /* background: url('../../img/mochaGrunge.png'); */
+    transition: .3s all ease-out;
+    opacity: 0;
+    overflow: hidden;
+    /* max-height: 0px; */
+    transform-origin: top; 
+    z-index: 3;
+    /* transform-style: preserve-3d; */  
+}
+.active {
+   
+    opacity: 1;
+    z-index: inherit;
+    
+    
+    
+}
+.main-navigation li ul {
+    z-index: 3;
+   
+    
+   
+
+}
+.main-navigation li ul li {
+    float: none;
+}
+.main-navigation li ul li a {
+    color:#fff;
+}
+
+.main-navigation li {
+    float:left;
+    height:100%;
+    position: relative;
+    min-height:40px;
+}
+.navbar {
+   
+}

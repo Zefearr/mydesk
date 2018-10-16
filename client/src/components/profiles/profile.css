@@ -1,0 +1,103 @@
+.profile-item-wrapper {
+    display: grid;
+    padding:10px;
+    grid-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    background-color:rgba(255,255,255, 0.2);
+}
+.profile-item {
+    /* background-color:#fff; */
+    /* box-shadow: 0px 2px 3px 1px gray; */
+}
+.profile-item__user-name {
+    font-size:22px;
+    color:#fff;
+    font-weight:600;
+    letter-spacing: 1px;
+    padding-left:20px;
+
+}
+.profile-social-input {
+    margin-bottom:10px;
+    margin-top:15px;
+}
+
+/* profile form  */
+.profile-form {
+    max-width:500px;
+    padding:10px 0;
+}
+.profile-form input, .profile-form select, .profile-form textarea  {
+    padding:7px;
+    width:100%;
+    border:none;
+    outline:none;
+    border-radius:3px;
+    
+}
+.profile-form textarea {
+    min-height:300px;
+}
+.profile-title {
+    color:#fff;
+    text-shadow: 0px 2px 2px black;
+}
+.profile-name-link a {
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    text-shadow:0 2px 1px black;
+}
+.profile-back-link {
+    display:block;
+    padding: 10px 22px;
+    border:1px dashed gray; 
+    /* box-shadow:0px 1px 1px black; */
+   width:100px;
+   text-align:center;
+   font-size:1.1rem;
+    background-color: rgb(211, 211, 211);
+    color: #222;
+    text-decoration:none;
+    margin-right:20px;
+    box-shadow:0 1px 2px black;
+
+}
+.profile-back-link:active {
+    transform:translateY(2px);
+    box-shadow:none;
+}
+.profiles-submit {
+    display:block;
+    padding: 10px 22px;
+    border:1px dashed gray; 
+    /* box-shadow:0px 1px 1px black; */
+   text-align:center;
+   font-size:1.1rem;
+    background-color: rgb(253, 95, 55);
+    color: #222;
+    text-decoration:none;
+    margin-right:20px;
+    box-shadow:0 1px 2px black;
+}
+.profiles-social-toggle {
+    display:block;
+    padding: 10px 22px;
+    border:1px dashed gray; 
+    /* box-shadow:0px 1px 1px black; */
+   text-align:center;
+   font-size:1.1rem;
+    background-color: rgb(171, 217, 247);
+    color: #222;
+    text-decoration:none;
+    margin-right:20px;
+    box-shadow:0 1px 2px black;
+    margin-bottom:10px;
+
+}
+.profile-item__link {
+    color:#111;
+    margin-top:10px;
+    width:120px;
+    padding:6px 7px;
+}

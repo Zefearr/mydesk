@@ -1,0 +1,77 @@
+
+.icon {   
+    background-image:  url('../../img/sprite/css/svg/sprite.css-4220466c.svg');                     
+}
+
+
+
+.icon--arrow { 
+    width: 21.07px;  
+    height: 34px;
+    
+    background-position: 0 0;    
+}
+
+
+.icon--arrow2 { 
+    width: 21.07px;  
+    height: 34px;
+    
+    background-position: 23.429333926387187% 0;    
+}
+
+
+.icon--buble { 
+    width: 34px;  
+    height: 34px;
+    
+    background-position: 54.72727272727273% 0;    
+}
+
+
+.icon--close_icon { 
+    width: 34px;  
+    height: 34px;
+    
+    background-position: 0 50%;    
+}
+
+
+.icon--commentsIcon { 
+    width: 34px;  
+    height: 32.76px;
+    
+    background-position: 44.15584415584416% 49.10456383593298%;    
+}
+
+
+.icon--facebook_icon { 
+    width: 34px;  
+    height: 33.96px;
+    
+    background-position: 98.88311688311688% 0;    
+}
+
+
+.icon--in_icon { 
+    width: 34px;  
+    height: 34px;
+    
+    background-position: 98.88311688311688% 49.94117647058823%;    
+}
+
+
+.icon--ng_icon_1 { 
+    width: 32.32px;  
+    height: 34px;
+    
+    background-position: 0 100%;    
+}
+
+
+.icon--twitter_icon { 
+    width: 34px;  
+    height: 28.01px;
+    
+    background-position: 41.97402597402598% 91.90431139343156%;    
+}

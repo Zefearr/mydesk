@@ -1,0 +1,10 @@
+.main {
+    min-height: 500px;
+    position: relative;
+    width:100%; 
+    max-width:1270px;
+    margin: 0 auto;
+    padding:20px;
+    z-index: 1;
+   
+}

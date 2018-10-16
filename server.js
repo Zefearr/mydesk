@@ -10,7 +10,9 @@ const posts = require('./routes/api/posts');
 const app = express();
 
 //bodyparser
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false})); 
+app.use(bodyParser.json());
+
 //db config
 const db = require('./config/keys').mongoURI;
 // connect to mongodb

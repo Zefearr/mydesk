@@ -1,0 +1,28 @@
+.dashboard-content-container {
+   position: relative;
+}
+.dashboard__profile-name-link {
+    padding:0;
+    padding:10px 10px;
+    margin:0;
+
+}
+.dashboard__profile-name-link::after {
+    content:'';
+    display:block;
+    clear: both;
+}
+.dashboard__profile-name-link a {
+    color:#fff;
+    text-decoration: none;
+    font-size:20px;
+    
+}
+.grp {
+    width:100%;
+}
+.grp::after {
+    content:'';
+    display:block;
+    clear: both;
+}

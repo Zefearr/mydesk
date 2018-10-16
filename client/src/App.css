@@ -1,0 +1,60 @@
+
+@font-face {
+  font-family: 'Righteous'; 
+  font-style: normal;
+  font-weight:400;
+  src: local('Righteous'),
+       url('fonts/Righteous-Regular.ttf') format('truetype');
+       /* url('/fonts/awesome-l.woff') format('woff'),
+       url('/fonts/awesome-l.ttf') format('ttf'),
+       url('/fonts/awesome-l.eot') format('eot'); */
+  unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
+  font-family: 'Roboto-Light'; 
+  font-style: normal;
+  font-weight:300;
+  src: local('Righteous'),
+       url('fonts/Roboto-Light.ttf') format('truetype');
+       /* url('/fonts/awesome-l.woff') format('woff'),
+       url('/fonts/awesome-l.ttf') format('ttf'),
+       url('/fonts/awesome-l.eot') format('eot'); */
+  unicode-range: U+000-5FF; /* Latin glyphs */
+} 
+
+
+.container {
+  max-width:1270px;
+  margin: 0 auto;
+  position: relative;
+ 
+}
+.container::after {
+  display: block;
+  content:'';
+  clear: both;
+}
+@media(min-width:1024px) {
+  .container {
+    padding:0;
+  }
+} 
+body {
+  /* background-color:rgb(168, 188, 219); */
+  /* font-family: 'Righteous', sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  background: url('img/mochaGrunge2.png') repeat;
+}
+* {
+  box-sizing: border-box;
+}
+
+.nav-flex {
+  display:flex;
+  width:1270px;
+}
+.icon { 
+  display:block;
+  cursor: pointer;
+}

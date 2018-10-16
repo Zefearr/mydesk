@@ -1,0 +1,25 @@
+.site-footer {
+    background-color: #333;
+    max-width: 1270px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100px;
+   
+    
+    
+}
+.container-footer {
+    display: flex;
+    max-width:1270px;
+    height:100px;
+   
+}
+.wrapper {
+   
+    margin: auto;
+    text-align: center;
+}
+.wrapper p {
+    color:#fff;
+    display: block;
+}

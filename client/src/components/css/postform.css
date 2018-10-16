@@ -1,0 +1,25 @@
+.quill {    
+    max-width:500px;
+   margin-top:10px;
+   margin-bottom:10px;
+}
+.ql-container {
+    min-height:300px;
+    background-color:#fff;
+}
+.ql-toolbar {
+    background-color:#fff;
+}
+.post-form-area {
+    margin: 0 auto;
+    display:block;
+    padding:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+    width:100%;
+    min-height:150px;
+    border-radius: 3px;
+    
+    border:1px solid gray;
+    resize:none;
+}
